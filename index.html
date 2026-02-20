@@ -118,25 +118,29 @@ startHearts();
 
 }
 
+let confettiInterval;
+
 function startConfetti(){
+
+clearInterval(confettiInterval); // stop old confetti first
 
 let count = 0;
 
-let confettiInterval = setInterval(()=>{
+confettiInterval = setInterval(()=>{
 
 confetti({
 particleCount:80,
-spread:70,
+spread:80,
 origin:{y:0.6}
 });
 
 count++;
 
-if(count >= 25){
+if(count >= 20){
 clearInterval(confettiInterval);
 }
 
-},500);
+},400);
 
 }
 
